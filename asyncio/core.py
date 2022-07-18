@@ -41,6 +41,18 @@ class TimeoutError(Exception):
     pass
 
 
+class QueueEmpty(Exception):
+    """Raised when calling `get_nowait()` on an empty Queue"""
+
+    pass
+
+
+class QueueFull(Exception):
+    """Raised when calling `put_nowait()` on a full Queue"""
+
+    pass
+
+
 # Used when calling Loop.call_exception_handler
 _exc_context = {"message": "Task exception wasn't retrieved", "exception": None, "future": None}
 
